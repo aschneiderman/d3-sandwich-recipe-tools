@@ -1,11 +1,5 @@
 # See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
-'context-menu':
-  'atom-text-editor': [
-    {
-      'label': 'Toggle d3-sandwich-recipe-tools'
-      'command': 'd3-sandwich-recipe-tools:toggle'
-    }
-  ]
+
 'menu': [
   {
     'label': 'Packages'
@@ -13,8 +7,8 @@
       'label': 'd3-sandwich-recipe-tools'
       'submenu': [
         {
-          'label': 'Toggle'
-          'command': 'd3-sandwich-recipe-tools:toggle'
+          'label': 'Create Basic Input Form'
+          'command': 'd3-sandwich-recipe-tools:createInputForm'
         }
       ]
     ]

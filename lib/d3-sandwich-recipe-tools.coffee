@@ -1,33 +1,27 @@
-D3SandwichRecipeToolsView = require './d3-sandwich-recipe-tools-view'
 {CompositeDisposable} = require 'atom'
 
-module.exports = D3SandwichRecipeTools =
-  d3SandwichRecipeToolsView: null
-  modalPanel: null
+module.exports =
   subscriptions: null
 
-  activate: (state) ->
-    @d3SandwichRecipeToolsView = new D3SandwichRecipeToolsView(state.d3SandwichRecipeToolsViewState)
-    @modalPanel = atom.workspace.addModalPanel(item: @d3SandwichRecipeToolsView.getElement(), visible: false)
-
-    # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
+  activate: ->
     @subscriptions = new CompositeDisposable
-
-    # Register command that toggles this view
-    @subscriptions.add atom.commands.add 'atom-workspace', 'd3-sandwich-recipe-tools:toggle': => @toggle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'd3-sandwich-recipe-tools:createInputForm': => @createInputForm()
 
   deactivate: ->
-    @modalPanel.destroy()
     @subscriptions.dispose()
-    @d3SandwichRecipeToolsView.destroy()
 
-  serialize: ->
-    d3SandwichRecipeToolsViewState: @d3SandwichRecipeToolsView.serialize()
+  createInputForm: ->
+    className = "code_play"
+    fields =  [{name: "height", value: 40}, {name: "width", value: 40}]
+    if editor = atom.workspace.getActiveTextEditor()
+      editor.insertText("  <form class=\"#{className}\">\n    <table class=\"input_table\">\n")
+      for field in fields
+        name = field.name
+        capitalizedName = field.name.charAt(0).toUpperCase() + field.name.slice(1)
+        value = field.value
+        editor.insertText("      <tr><td>#{capitalizedName}</td><td><input name=\"#{name}\" type=\"text\" value=\"#{value}\"> </td></tr>\n")
+    editor.insertText("    </table>\n  </form>\n")
 
-  toggle: ->
-    console.log 'D3SandwichRecipeTools was toggled!'
 
-    if @modalPanel.isVisible()
-      @modalPanel.hide()
-    else
-      @modalPanel.show()
+# Now all I need to do is to convert the line below into an array of objects:
+  # width = <i id="width">40</i>, height = <i id="height">40</i>, cellsize = <i id="cellsize">39</i>;
