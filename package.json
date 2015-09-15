@@ -5,9 +5,6 @@
   "description": "Tools to make it easier to create D3 Sandwich recipes",
   "keywords": [
   ],
-  "activationCommands": {
-    "atom-workspace": "d3-sandwich-recipe-tools:createInputForm"
-  },
   "repository": "https://github.com/atom/d3-sandwich-recipe-tools",
   "license": "MIT",
   "engines": {

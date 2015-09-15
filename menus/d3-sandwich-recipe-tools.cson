@@ -4,11 +4,15 @@
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'd3-sandwich-recipe-tools'
+      'label': 'D3 Sandwich Recipe Tools'
       'submenu': [
         {
           'label': 'Create Basic Input Form'
-          'command': 'd3-sandwich-recipe-tools:createInputForm'
+          'command': 'd3-sandwich-recipe-tools:create-input-form'
+        },
+        {
+          'label': 'Add Italics Tag'
+          'command': 'd3-sandwich-recipe-tools:add-italics-and-id'
         }
       ]
     ]

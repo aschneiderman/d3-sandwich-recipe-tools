@@ -8,4 +8,6 @@
 # For more detailed documentation see
 # https://atom.io/docs/latest/behind-atom-keymaps-in-depth
 'atom-workspace':
-  'ctrl-alt-o': 'd3-sandwich-recipe-tools:createInputForm'
+  'ctrl-alt-o': 'd3-sandwich-recipe-tools:create-input-form'
+  'ctrl-alt-F7': 'd3-sandwich-recipe-tools:add-italics-and-id'
+  

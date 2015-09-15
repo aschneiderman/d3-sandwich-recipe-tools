@@ -1,5 +1,10 @@
 # d3-sandwich-recipe-tools package
 
-A short description of your package.
+Functions and snippets to make creating D3 Sandwich Recipes easier.
 
-![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+Documentation coming soon...
+
+NOTES
+- At one point I ended up taking activationCommands out of package.json.  So right now,
+it is automatically loaded. At some point I should go back and figure out how to get
+activationCommands to work and put it back in.
