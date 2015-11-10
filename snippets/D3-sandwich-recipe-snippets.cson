@@ -1,0 +1,22 @@
+'.text.html':
+      'test2':
+        'prefix': 'test2'
+        'body':  'Hi there, this is a test, Test 2'
+      'Recipe Row':
+        'prefix': 'recipe-row'
+        'body': """
+        <div class="recipe_row">
+        <div class="recipe_text">
+          $1
+        </div>
+        <div class="recipe_code">
+          <pre>
+          $2
+          </pre>
+        </div>
+        </div>  <!-- end recipe_row -->
+        $0
+        """
+      'Bold ID':
+        'prefix':'bold-id'
+        'body': '<b id="$1">'

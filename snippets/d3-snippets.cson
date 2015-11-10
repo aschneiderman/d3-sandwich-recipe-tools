@@ -1,0 +1,13 @@
+'.text.html':
+      'test3':
+        'prefix': 'test3'
+        'body':  'Hi there, this is a test, Test 3'
+
+
+        
+      'HTML Comment':
+        'prefix': 'comment-html'
+        'body': '<!-- $1 -->'
+      'HTML End Comment':
+        'prefix': 'comment-html-end'
+        'body': '   <!-- end $1 -->'
