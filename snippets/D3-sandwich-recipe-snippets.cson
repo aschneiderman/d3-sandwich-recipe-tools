@@ -2,6 +2,42 @@
       'test2':
         'prefix': 'test2'
         'body':  'Hi there, this is a test, Test 2'
+      'End Comment on Div':
+        'prefix': 'comment-div-end'
+        'body': "<!-- end $1 -->"
+
+      'Toy':
+        'prefix': 'recipe-toy'
+        'body': """
+        <div class="toy" id="$1">
+        	<div class="recipe_row">
+        		<div class="recipe_text">
+        		</div> <!-- end recipe_text -->
+        		<div class="recipe_code">
+        			<pre>
+        		  </pre>
+        		</div>   <!-- end recipe_code -->
+        	</div>  <!-- end recipe_row -->
+        	<div class="recipe_row">
+        		<div class="recipe_text">
+        		  <svg width="520" height="400"></svg>        <!-- SVG graphics will go here  -->
+        		</div>
+        			<div class="recipe_code">
+        			  <form>
+        			  </form>
+        			</div>	<!-- end recipe_code -->
+        	</div>     <!-- end recipe_row -->
+        </div>  <!-- end toy -->
+
+        <script type="text/javascript">
+
+        // Define the function for updating the data viz using the values the user entered in the form
+        UpdateFunction['$1'] = function(values) {
+          getSVG('$1').
+        };
+        </script>
+        """
+
       'Recipe Row':
         'prefix': 'recipe-row'
         'body': """
@@ -20,3 +56,31 @@
       'Bold ID':
         'prefix':'bold-id'
         'body': '<b id="$1">'
+
+'*':
+      'Recipe Page':
+        'prefix': 'recipe-page'
+        'body': """
+        <DOCTYPE html>
+        <meta charset="utf-8">
+        <html>
+        <head>
+          <title>$1</title>
+          <script src="../../d3.v3.min.js"></script>        <!-- d3 library -->
+          <link href="../../sandwich.css" rel="stylesheet" media="screen">      <!-- sandwich's CSS -->
+        </head>
+        <body>
+        <div id="container">
+
+        <div id="sandwich-heading">
+          <h1> <img src="../../sandwich_icon.jpeg"  height="50" width="50">  d3 sandwich </h1>
+          <div id="sandwich-border"></div>
+        </div>
+
+        <h4> Up Next: <a href=".html">Recipe Step #:  </a></h4>
+
+        <div id= "sandwich-footer">
+        </div> <!-- end sandwich-footer -->
+        </div><!-- end container -->
+        </body>
+        </html>"""
