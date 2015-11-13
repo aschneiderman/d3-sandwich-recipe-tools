@@ -10,4 +10,4 @@
 'atom-workspace':
   'ctrl-alt-o': 'd3-sandwich-recipe-tools:create-input-form'
   'ctrl-alt-F7': 'd3-sandwich-recipe-tools:add-italics-and-id'
-  
+  'ctrl-alt-f5': 'd3-sandwich-recipe-tools:html-format-code'  

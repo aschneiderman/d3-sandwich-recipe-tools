@@ -10,14 +10,15 @@ module.exports =
   activate: ->
     @subscriptions = new CompositeDisposable
     @subscriptions.add atom.commands.add 'atom-workspace', 'd3-sandwich-recipe-tools:create-input-form': => @createInputForm()
-    @subscriptions.add atom.commands.add 'atom-workspace', 'd3-sandwich-recipe-tools:add-italics-and-id': => @addItalicsAndID()
-
+    @subscriptions.add atom.commands.add 'atom-workspace', 'd3-sandwich-recipe-tools:add-italics-and-id': => @addItalicsAndIDtoVariables()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'd3-sandwich-recipe-tools:html-format-code': => @formatHTMLCode()
+# formatHTMLCode
   deactivate: ->
     @subscriptions.dispose()
 
 
-  addItalicsAndID: ->
-    # addItalicsAndID: converts selected text so italics tags are added for every variables = value pair
+  addItalicsAndIDtoVariables: ->
+    # addItalicsAndIDtoVariables: converts selected text so italics tags are added for every variables = value pair
     if editor = atom.workspace.getActiveTextEditor()
       text =  editor.getLastSelection().getText()
       editor.insertText( text.replace(/(\w*?)\s*\=\s*(\w*?)([,;])/gm, "$1 = <i id=\"$1\">$2<\/i>$3") )
@@ -39,5 +40,11 @@ module.exports =
       form = form  + "    </table>\n  </form>\n"
       editor.insertText(form)
 
-
-# Now all we need to do is grab the pre-section for the class, and we're good to go!
+  formatHTMLCode: ->
+  # html-format-code: Convert the D3 code stored in the clipboard into preformatted HTML and insert it
+    return unless editor = atom.workspace.getActiveTextEditor()
+    text = atom.clipboard.read()
+    text = text.replace(/&/gm, "&amp")
+    text = text.replace(/</gm, "&lt")
+    text = text.replace(/>/gm, "&gt")
+    editor.insertText("\n#{text}\n")
