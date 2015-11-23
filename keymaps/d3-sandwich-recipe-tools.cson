@@ -9,5 +9,6 @@
 # https://atom.io/docs/latest/behind-atom-keymaps-in-depth
 'atom-workspace':
   'ctrl-alt-o': 'd3-sandwich-recipe-tools:create-input-form'
-  'ctrl-alt-F7': 'd3-sandwich-recipe-tools:add-italics-and-id'
-  'ctrl-alt-f5': 'd3-sandwich-recipe-tools:html-format-code'  
+  'ctrl-alt-F8': 'd3-sandwich-recipe-tools:add-italics-class-to-selection'
+  'ctrl-alt-F7': 'd3-sandwich-recipe-tools:add-italics-class-to-line'
+  'ctrl-alt-f5': 'd3-sandwich-recipe-tools:html-format-code'

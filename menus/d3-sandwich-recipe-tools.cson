@@ -7,12 +7,16 @@
       'label': 'D3 Sandwich Recipe Tools'
       'submenu': [
         {
-          'label': 'Create Basic Input Form'
-          'command': 'd3-sandwich-recipe-tools:create-input-form'
+          'label': 'Wrap Italics Tag Around Variables'
+          'command': 'd3-sandwich-recipe-tools:add-italics-class-to-line'
         },
         {
-          'label': 'Add Italics Tag'
-          'command': 'd3-sandwich-recipe-tools:add-italics-and-id'
+          'label': 'Wrap Italics Tag around Selection'
+          'command': 'd3-sandwich-recipe-tools:add-italics-class-to-selection'
+        }
+        {
+          'label': 'Create Basic Input Form'
+          'command': 'd3-sandwich-recipe-tools:create-input-form'
         }
       ]
     ]

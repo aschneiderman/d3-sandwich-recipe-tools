@@ -4,10 +4,16 @@
         'body':  'Hi there, this is a test, Test 3'
 
 
-        
+
       'HTML Comment':
         'prefix': 'comment-html'
         'body': '<!-- $1 -->'
       'HTML End Comment':
         'prefix': 'comment-html-end'
         'body': '   <!-- end $1 -->'
+      'Console Log':
+        'prefix': 'console'
+        'body': 'console.log($1);'
+      'Variable':
+        'prefix': 'variable'
+        'body': 'var $1 = $2;'
